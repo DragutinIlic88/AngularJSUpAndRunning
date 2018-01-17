@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+ <html ng-app> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Notes App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div ng-init="user={gender: 'female'}">
+            <input type="radio"
+                name="gender"
+                ng-model="user.gender"
+                value="male">
+            <input type="radio"
+                name="gender"
+                ng-model="user.gender"
+                value="female">
+        </div>
+
+        <div ng-init="otherGender = 'other'">
+                <input type="radio"
+                name="gender2"
+                ng-model="user.gender2"
+                value="male">Male
+                <input type="radio"
+                name="gender2"
+                ng-model="user.gender2"
+                value="female">Female
+                <input type="radio"
+                name="gender2"
+                ng-model="user.gender2"
+                ng-value="otherGender">{{otherGender}}
+                </div>
+        <script src="angular.js"></script>
+    </body>
+</html>
