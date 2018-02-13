@@ -3,7 +3,7 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['jasmine'],
     files: ['angular.min.js','angular-mocks.js','*.js'],
-    exclude: [],
+    exclude: ['notesApp1SpecWithSpies.js','notesApp1SpecWithSpyReturn.js'],
     port: 8080,
     logLevel: config.LOG_INFO,
     autoWatch: true,
