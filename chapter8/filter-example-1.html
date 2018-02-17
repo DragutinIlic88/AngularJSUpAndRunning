@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Filters in Action</title>
+    </head>
+    <body ng-app="filtersApp">
+        <div ng-controller="FilterCtrl as ctrl">
+            <div>
+                Amount as a number: {{ctrl.amount | number}}
+            </div>
+            <div>
+                Total Cost as a currency: {{ctrl.totalCost | currency}}
+            </div>
+            <div>
+                Total Cost in INR: {{ctrl.totalCost | currency:'INR'}}
+            </div>
+            <div>
+                Shouting the name: {{ctrl.name | uppercase}}
+            </div>
+            <div>
+                Whispering the name: {{ctrl.name | lowercase | limitTo: 5}}
+            </div>
+            <div>
+                Start time: {{ctrl.startTime | date:'medium'}}
+            </div>
+        </div>
+        <script src="../angular.js">
+        </script>
+        <script>
+            angular.module('filtersApp',[])
+                .controller('FilterCtrl', [function(){
+                    var self = this;
+                    self.amount = 1024;
+                    self.totalCost = 4906;
+                    self.name = 'Shyam Seshadri';
+                    self.startTime = new Date().getTime();
+                }]);
+        </script>
+        <!--
+            Most usable builtin filters:
+                currency:'currency simbol',
+                number:'decimal size',
+                lowercase, upercase
+                json - same as JSON.stringify
+                date: 'format'
+        -->
+    </body>
+</html>
